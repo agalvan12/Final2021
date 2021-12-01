@@ -56,11 +56,18 @@ According to the Chi-squared test, the p-value is very small (2.2e-16). This ind
 
 ```{r}
 MaleEstimate <- MalesMod$estimate
+MaleLow <- MalesMod$conf.int[1]
+MaleHigh <- MalesMod$conf.int[2]
 MaleProb <- MaleEstimate / (1+MaleEstimate)
+MaleLowProb <- MaleLow / (1+MaleLow)
+MaleLowEffect <- MaleLowProb * 100
+MaleHighProb <- MaleHigh / (1+MaleHigh)
+MaleHighEffect <- MaleHighProb * 100
 MaleEffect <- MaleProb * 100
+options(digits = 1)
 ```
 
-The effectiveness of the Covid91 vaccine for Males is `r MaleEffect`.
+The effectiveness of the Covid91 vaccine for Males is `r MaleEffect`. The confidence interval for males is `r MaleLowEffect` to `r MaleHighEffect`.
 
 # Females
 
