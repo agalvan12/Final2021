@@ -23,8 +23,21 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 # Males
 
+```{r}
+Males <- filter(Covid91, sex == "Man")
+```
+
+```{r}
+barchartGC(~infected + treatment,data=Males)
+barchartGC(~infected + treatment,data=Males, type="percent")
+
+```
+
+The bar chart shows that the Males who took the placebo got sick more than the ones Males who took the Covid91. We can see that the pink bar for placebo is almost doubled compared to the drug. This indicates the drug is affective for the Males group.
+
 
 # Females
+
 
 # Drug Users
 
