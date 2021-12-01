@@ -49,7 +49,18 @@ Based on the numerical summaries, 33.11% of the Males who got sick had the treat
 chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
+MalesMod <- fisher.test(table1)
 ```
+
+According to the Chi-squared test, the p-value is very small (2.2e-16). This indicats that we need to reject the null hypothesis and that there is a difference between the Males who took the placebo and Males who took the drug.
+
+```{r}
+MaleEstimate <- MalesMod$estimate
+MaleProb <- MaleEstimate / (1+MaleEstimate)
+MaleEffect <- MaleProb * 100
+```
+
+The effectiveness of the Covid91 vaccine for Males is `r MaleEffect`.
 
 # Females
 
