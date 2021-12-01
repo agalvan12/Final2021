@@ -35,6 +35,21 @@ barchartGC(~infected + treatment,data=Males, type="percent")
 
 The bar chart shows that the Males who took the placebo got sick more than the ones Males who took the Covid91. We can see that the pink bar for placebo is almost doubled compared to the drug. This indicates the drug is affective for the Males group.
 
+### Numerical Summaries
+```{r}
+table1 <- xtabs(~infected + treatment, data=Males)
+rowPerc(table1)
+colPerc(table1)
+```
+Based on the numerical summaries, 33.11% of the Males who got sick had the treatment and 66.89% of the Males who got sick took the placebo. This is a 2 to 1 difference and lets us know that the treatment is in fact working.
+
+## Inferential  
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 # Females
 
