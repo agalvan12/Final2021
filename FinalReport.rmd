@@ -71,6 +71,32 @@ The effectiveness of the Covid91 vaccine for Males is `r MaleEffect`. The confid
 
 # Females
 
+```{r}
+Females <- filter(Covid91, sex == "Woman")
+```
+
+```{r}
+barchartGC(~infected + treatment,data=Females)
+barchartGC(~infected + treatment,data=Females, type="percent")
+
+```
+
+According to the barchart, this vaccine is not as effective for Females. The blue bar in the chart indicates that out of the Females who are sick more than 50% had gotten the vaccine. 
+
+### Numerical Summaries
+```{r}
+table1 <- xtabs(~infected + treatment, data=Females)
+rowPerc(table1)
+colPerc(table1)
+```
+
+## Inferential  
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+FemalesMod <- fisher.test(table1)
+```
 
 # Drug Users
 
