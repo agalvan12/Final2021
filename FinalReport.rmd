@@ -52,8 +52,9 @@ fisher.test(table1)
 MalesMod <- fisher.test(table1)
 ```
 
-According to the Chi-squared test, the p-value is very small (2.2e-16). This indicats that we need to reject the null hypothesis and that there is a difference between the Males who took the placebo and Males who took the drug.
+According to the Chi-squared test, the p-value is very small (2.2e-16). This indicates that we need to reject the null hypothesis and that there is a difference between the Males who took the placebo and Males who took the drug.
 
+## Calculating Effectiveness
 ```{r}
 MaleEstimate <- MalesMod$estimate
 MaleLow <- MalesMod$conf.int[1]
@@ -90,6 +91,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+This table reassures that the Females who got sick, 58% of them had gotten the vaccine versus 42% of the sick Females that got the placebo. Based on this information, we can see that the vaccine seems to not be as effective for Females.
+
 ## Inferential  
 ```{r}
 chisq.test(table1)
@@ -97,6 +100,25 @@ chisqtestGC(table1)
 fisher.test(table1)
 FemalesMod <- fisher.test(table1)
 ```
+
+Since our p-value is very small, we have to reject the null hypothesis. This indicates that there is a difference between our data. In this case, it looks as if the data is different in a bad way, meaning the drug if not effective compared to the placebo.
+
+## Calculating Effectiveness
+
+```{r}
+FemaleEstimate <- FemalesMod$estimate
+FemaleLow <- FemalesMod$conf.int[1]
+FemaleHigh <- FemalesMod$conf.int[2]
+FemaleProb <- FemaleEstimate / (1+FemaleEstimate)
+FemaleLowProb <- FemaleLow / (1+FemaleLow)
+FemaleLowEffect <- FemaleLowProb * 100
+FemaleHighProb <- FemaleHigh / (1+FemaleHigh)
+FemaleHighEffect <- FemaleHighProb * 100
+FemaleEffect <- FemaleProb * 100
+options(digits = 1)
+```
+
+The effectiveness of the Covid91 vaccine for Females is `r FemaleEffect`. The confidence interval for Females is `r FemaleLowEffect` to `r FemaleHighEffect`.
 
 # Drug Users
 
