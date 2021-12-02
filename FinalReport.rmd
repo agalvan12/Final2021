@@ -33,7 +33,7 @@ barchartGC(~infected + treatment,data=Males, type="percent")
 
 ```
 
-The bar chart shows that the Males who took the placebo got sick more than the ones Males who took the Covid91. We can see that the pink bar for placebo is almost doubled compared to the drug. This indicates the drug is affective for the Males group.
+The bar chart shows that the Males who took the placebo got sick more than the ones Males who took the Covid91. We can see that the pink bar for placebo is almost doubled compared to the drug. This indicates the drug is effective for the Males group.
 
 ### Numerical Summaries
 ```{r}
@@ -222,3 +222,4 @@ The effectiveness of the Covid91 vaccine for LGBTQ community is `r LGBTQEffect`.
 
 # Conclusions and recommendations
 
+In conclusion, based off the data we have here, we can see that the effectiveness really does vary among the 4 different subgroups. The bar chart for the Males shows that the Males who took the placebo got sick more than the ones Males who took the Covid91. This indicates the drug is effective for the Males group. According to the barchart, this vaccine is not as effective for Females. The blue bar in the Females chart indicates that out of the Females who are sick more than 50% had gotten the drug. For the Drug Users, the bar chart shows that the Drug Users who took the placebo got sick more than the ones Drug Users who took the Covid91. This indicates the drug is effective for the Drug Users group. As for the LGBTQ community, we can see that the drug is not effective because more than 50% of the sick group got the drug. Reccomendations could be made that Males and Drug Users should take the vaccine, whereas based off the data we have, Females and the LGBTQ community should not get the vaccine, as it seems to not be as effective. 
